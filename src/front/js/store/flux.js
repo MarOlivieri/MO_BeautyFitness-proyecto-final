@@ -31,8 +31,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// Función para cargar los niveles de experiencia desde el backend
 			fetchExperienceLevels : async () => {
 				try {
+
 				  const response = await fetch('https://didactic-winner-x5rrg7q5wjxjhpj44-3001.app.github.dev/api/experience_levels')
 				  if (!response.ok) throw new Error('Error fetching experience levels');
+
+			
+
+
 				  const data = await response.json();
 				  setStore({ experienceLevels: data });
 			  } catch (error) {
